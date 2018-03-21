@@ -3,9 +3,24 @@
 
 # Group adm is needed to read logs
 - name: Create admin users
-  action: user name={{item.name}} groups=admin,adm shell=/bin/bash password={{item.password}}
-  with_items: users
+  action: user name="{{ item.name }}" groups=admin,adm shell=/bin/bash password="{{ item.password }}"
+  with_items:
+    - "{{ users }}"
 
 - name: Install authorized keys
-  action: authorized_key user={{item.name}} key="{{item.public_key}}"
-  with_items: users
+  action: authorized_key user="{{ item.name }}" key="{{ item.public_key }}"
+  with_items:
+    - "{{ users }}"
+
+- name: Allow users to have passwordless sudo
+  become: true
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    line: '{{ item.name  }} ALL=(ALL) NOPASSWD:ALL'
+    validate: visudo -cf %s
+  with_items:
+    - "{{ users }}"
+  tags:
+    - system_user
+

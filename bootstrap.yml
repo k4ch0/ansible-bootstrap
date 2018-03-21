@@ -1,6 +1,6 @@
 ---
-  - name: Bootstrap development servers
+  - name: Bootstrap Ubuntu servers
     hosts: development
-    sudo: yes
+    become: true
     roles:
       - bootstrap

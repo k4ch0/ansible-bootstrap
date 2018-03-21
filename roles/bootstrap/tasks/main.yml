@@ -5,5 +5,5 @@
  - include: users.yml
  - include: security.yml
  - include: files.yml
- - include: nullmailer.yml
+ - include: mailgun.yml
  - include: newrelic.yml

@@ -1,6 +1,6 @@
 # Ansible Bootstrap
 
-This repository contains a basic Ansible role used for bootstrapping an Ubuntu server.
+This repository contains a minimal Ansible role used for bootstrapping an Ubuntu server.
 
 The included tasks are:
 
@@ -13,47 +13,50 @@ The included tasks are:
     - Disable password authentication
     - Install [Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page)
     - Configure [UFW Firewall](https://help.ubuntu.com/community/UFW)
-* Install and configure [Nullmailer](http://untroubled.org/nullmailer/) with [Mandrill](https://mandrill.com)
+* Configure [Mailgun](https://www.mailgun.com) as a SMTP relay
 * Install and configure [NewRelic server monitoring](https://docs.newrelic.com/docs/server/installation-ubuntu-and-debian)
 
-Only tested against Vagrant Trusty64 box, it should also work in Precise
+## Requirements
 
-_ansible.cfg_ and _hosts_ are configured to connect to a Vagrant server running with a default configuration  (localhost in port 2222). If you are using Vagrant 1.7 or greater, update _private_file_key_ path in _ansible.cfg_ as explained in [Ansible documentation](http://docs.ansible.com/guide_vagrant.html#running-ansible-manually)
+Ansible - 2.4 + above
+Ubuntu - 16.04 + above
+SSH Authentication for the root user.
 
-   
-   
+## Configuration
+
+Configure the following, on the file: roles/bootstrap/defaults/main.yml 
+
+#
+# MailGun Credentials
+#
+mailgun_username: user@example.com 
+mailgun_password: password
+#
+# Who should receive root's email?
+root_forward: user@example.com
+#
+users:
+    - {name: 'USERNAME', public_key: 'SSH KEY for USERNAME', password: 'USERNAME PASSWORD' }
+
+locale: en_US.UTF-8
+language: 'en_US:en'
+timezone: America/Chicago
+
+newrelic_license_key: "NEW RELIC LICENSE"
+
+ufw_ports:
+  - "ssh"
+  - "http"
+  - "https"
+
 ## Usage
 
-First of all, install Ansible, in Ubuntu:
+Check the connection from Ansible to the server. From the project root you can ping to the server
 
-    sudo add-apt-repository ppa:rquillo/ansible
-    sudo apt-get update
-    sudo apt-get install ansible
-
-[Install Vagrant](https://www.vagrantup.com/downloads) and create a server  
-
-    vagrant init ubuntu/trusty64
-    vagrant up
-
-Now, check the connection from Ansible to the server. From the project root you can ping to the server
-
-    ansible dev -m ping
+    ansible SERVER -m ping
   
-And check the setup
-  
-    ansible dev -m setup
-
-
-Once checked, update the file _development.yml_ with your own configuration, if not configured properly, the installation will not work.
-
- 
 Finally, the role can be executed using
 
     ansible-playbook bootstrap.yml
 
 If you don't need any of the tasks, just comment them in the _main.yml_ file of the role.  
-
-
-## License
-
-Released under the MIT License, Copyright (c) 2014-15 - Diego Rodríguez

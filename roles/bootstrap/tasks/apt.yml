@@ -1,7 +1,7 @@
 ---
 - apt: update_cache=yes
 
-- apt: pkg=git,git-core,build-essential,libpq-dev,libreadline-dev state=present
+- apt: pkg=git,git-core,build-essential,libpq-dev,libreadline-dev,postfix state=present
 - apt: pkg=python-pycurl,python-psycopg2 state=present
 
 - apt: pkg=libreadline6-dev,zlib1g-dev,libssl-dev,libyaml-dev,libsqlite3-dev,sqlite3,libxml2-dev,libxslt1-dev state=present

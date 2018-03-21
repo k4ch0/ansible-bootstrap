@@ -5,7 +5,7 @@
 - apt: pkg=newrelic-sysmond update_cache=yes
 
 - name: Configure server monitor daemon
-  command: "nrsysmond-config --set license_key={{newrelic_license_key}}"
+  command: /usr/sbin/nrsysmond-config --set license_key="{{ newrelic_license_key }}"
 
 - name: Start server monitor daemon
   command: "/etc/init.d/newrelic-sysmond start"
