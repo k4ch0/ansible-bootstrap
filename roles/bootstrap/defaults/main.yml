@@ -15,7 +15,7 @@ users:
 
 locale: en_US.UTF-8
 language: 'en_US:en'
-timezone: America/Chicago
+timezone: "America/Chicago"
 
 #mailgun_user: rs886212@mg.rackspace.com
 #mailgun_api_key: pubkey-72v2i0mosj64im-cicukj3vr77dqkam0
