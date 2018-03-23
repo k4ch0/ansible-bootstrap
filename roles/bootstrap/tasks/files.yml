@@ -1,4 +1,5 @@
 ---
 - name: Copy environment
+  become: true
   template: src=environment dest=/etc/environment
 
