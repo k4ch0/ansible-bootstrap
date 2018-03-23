@@ -3,6 +3,7 @@
   action: apt pkg=postfix
 
 - name: Include Mailgun configuration in main.conf
+  become: true
   lineinfile:
     dest: /etc/postfix/main.cf
     line: "{{ item.line  }}"

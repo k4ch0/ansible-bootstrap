@@ -1,4 +1,13 @@
 ---
+
+default_repos:
+  - { repo: 'deb http://apt.newrelic.com/debian/ newrelic non-free' }
+
+default_repos_keys:
+  - { key: 'https://download.newrelic.com/548C16BF.gpg' }
+
+
+
 # Mailgun SMTP documentation:
 #
 #         https://documentation.mailgun.com/en/latest/user_manual.html#smtp-relay
@@ -22,6 +31,7 @@ timezone: "America/Chicago"
 
 #               nullmailler_admin_mail: user@domain.com
 #                nullmailer_domain: domain.com
+
 
 newrelic_license_key: "b55cb640f4c3d5bedd4c0bd474282a78f44dd827"
 

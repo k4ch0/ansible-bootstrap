@@ -13,7 +13,7 @@ install:
   #  - "printf '[ssh_connection]\\npipelining = True\\n' >> ansible.cfg"
 
 before_script:
-    - echo localhost > tests/inventory
+  #- echo localhost > tests/inventory
     - ansible --version
     - ansible-playbook --syntax-check ./tests/test.yml -i ./tests/inventory
     #    - ansible-galaxy install --role-file requirements.yml

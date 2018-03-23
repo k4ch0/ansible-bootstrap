@@ -1,5 +1,7 @@
 # Ansible Bootstrap
 
+[![Build Status](https://travis-ci.org/k4ch0/ansible-ubuntu-bootstrap.svg?branch=master)](https://travis-ci.org/k4ch0/ansible-ubuntu-bootstrap)
+
 This repository contains a minimal Ansible role used for bootstrapping an Ubuntu server.
 
 The included tasks are:

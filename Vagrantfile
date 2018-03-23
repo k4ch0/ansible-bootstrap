@@ -35,10 +35,9 @@ Vagrant.configure("2") do |config|
         SHELL
       end
 
-      machine.vm.provision :ansible do |ansible|
+      machine.vm.provision :ansible_local do |ansible|
         ansible.inventory_path = "tests/inventory"
         ansible.playbook = "tests/test.yml"
-        ansible.force_remote_user = "false"
         ansible.verbose = ENV['ANSIBLE_VERBOSE'] ||= "vvvv"
         ansible.tags = ENV['ANSIBLE_TAGS'] ||= "all"
       end
