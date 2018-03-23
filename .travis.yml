@@ -22,13 +22,13 @@ script:
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
   - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
   #- "ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo | tee /tmp/output.txt; grep -q 'changed=0.*failed=0' /tmp/output.txt &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0) || (echo 'Idempotence test: fail' &amp;&amp; exit 1)"
-  - # Taken from https://servercheck.in/blog/testing-ansible-roles-travis-ci-github
+  #- # Taken from https://servercheck.in/blog/testing-ansible-roles-travis-ci-github
     # Run the role/playbook again, checking to make sure it's idempotent.
-    - >
-    ansible-playbook -i inventory tests/test.yml --connection=local --sudo
-    | grep -q 'changed=0.*failed=0'
-    && (echo 'Idempotence test: pass' && exit 0)
-    || (echo 'Idempotence test: fail' && exit 1)
+  - >
+  ansible-playbook -i inventory tests/test.yml --connection=local --sudo
+  | grep -q 'changed=0.*failed=0'
+  && (echo 'Idempotence test: pass' && exit 0)
+  || (echo 'Idempotence test: fail' && exit 1)
 
 
 notifications:
