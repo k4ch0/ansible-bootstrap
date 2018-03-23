@@ -9,8 +9,8 @@ before_install:
 install:
   - pip install ansible==2.4.3
   #- ansible-galaxy install -r tests/requirements.yml -p tests/roles
-  - "printf '[defaults]\\nroles_path = ../\\n' >> ansible.cfg"
-  - "printf '[ssh_connection]\\npipelining = True\\n' >> ansible.cfg"
+  #  - "printf '[defaults]\\nroles_path = ../\\n' >> ansible.cfg"
+  #  - "printf '[ssh_connection]\\npipelining = True\\n' >> ansible.cfg"
 
 before_script:
     - echo localhost > tests/inventory
@@ -21,7 +21,7 @@ before_script:
 script:
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
   - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
-  - "ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo | tee /tmp/output.txt; grep -q 'changed=0.*failed=0' /tmp/output.txt &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0) || (echo 'Idempotence test: fail' &amp;&amp; exit 1)"
+  #- "ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo | tee /tmp/output.txt; grep -q 'changed=0.*failed=0' /tmp/output.txt &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0) || (echo 'Idempotence test: fail' &amp;&amp; exit 1)"
   - # Taken from https://servercheck.in/blog/testing-ansible-roles-travis-ci-github
     # Run the role/playbook again, checking to make sure it's idempotent.
     - >
