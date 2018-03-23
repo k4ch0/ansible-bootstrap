@@ -24,20 +24,19 @@
   when:
     - apt_update is not defined
 
-
-- apt: pkg=git,git-core,build-essential,libpq-dev,libreadline-dev,postfix,aptitude state=present
+- name: Install minimal packages
   become: true
+  apt:
+    pkg: "{{ item.name }}"
+    state: latest
+  with_items:
+    - "{{ var_packages }}"
 
-- apt: pkg=python-pycurl,python-psycopg2 state=present
-  become: true
 
 - apt: pkg=libreadline6-dev,zlib1g-dev,libssl-dev,libyaml-dev,libsqlite3-dev,sqlite3,libxml2-dev,libxslt1-dev state=present
   become: true
 
 - apt: pkg=autoconf,libgdbm-dev,libncurses5-dev,automake,libtool,bison,pkg-config,libffi-dev state=present
-  become: true
-
-- apt: pkg=locate,tree,ack-grep,htop,nmap,dlocate state=present
   become: true
 
 - apt: upgrade=yes

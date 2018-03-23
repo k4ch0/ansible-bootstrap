@@ -1,0 +1,21 @@
+---
+
+var_packages:
+  - {name: 'git'}
+  - {name: 'git-core'}
+  - {name: 'build-essential'}
+  - {name: 'libpq-dev'}
+  - {name: 'libreadline-dev'}
+  - {name: 'postfix'}
+  - {name: 'aptitude'}
+  - {name: 'python-pycurl'}
+  - {name: 'python-psycopg2'}
+  - {name: 'locate'}
+  - {name: 'dlocate'}
+  - {name: 'tree'}
+  - {name: 'ack-grep'}
+  - {name: 'htop'}
+  - {name: 'nmap'}
+  - {name: 'libreadline6-dev'}
+
+#zlib1g-dev,libssl-dev,libyaml-dev,libsqlite3-dev,sqlite3,libxml2-dev,libxslt1-dev
