@@ -17,5 +17,20 @@ var_packages:
   - {name: 'htop'}
   - {name: 'nmap'}
   - {name: 'libreadline6-dev'}
+  - {name: 'zlib1g-dev'}
+  - {name: 'libssl-dev'}
+  - {name: 'libyaml-dev'}
+  - {name: 'libsqlite3-dev'}
+  - {name: 'libxml2-dev'}
+  - {name: 'libxslt1-dev'}
+  - {name: 'libgdbm-dev'}
+  - {name: 'libncurses5-dev'}
+  - {name: 'libffi-dev'}
+  - {name: 'libtool'}
+  - {name: 'autoconf'}
+  - {name: 'automake'}
+  - {name: 'bison'}
+  - {name: 'pkg-config'}
+  - {name: 'sqlite3'}
+  - {name: 'newrelic-sysmond'}
 
-#zlib1g-dev,libssl-dev,libyaml-dev,libsqlite3-dev,sqlite3,libxml2-dev,libxslt1-dev

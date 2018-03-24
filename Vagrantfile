@@ -1,5 +1,5 @@
 boxes = {
-  "ubuntu-xenial" => {
+  "vagrant-ubuntu" => {
     :box => "ubuntu/xenial64",
     :ip  => '10.0.200.100',
     :cpu => "100",
