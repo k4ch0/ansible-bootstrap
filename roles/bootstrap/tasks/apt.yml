@@ -28,6 +28,7 @@
   become: true
   apt:
     upgrade: true
+  when: not ansible_unit_test
 
 - name: Install minimal packages
   become: true
