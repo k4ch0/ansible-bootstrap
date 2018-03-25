@@ -20,9 +20,11 @@
   service:
     name: cron
     state: restarted
+  when: not ansible_unit_test
 
 - name: restart syslog
   become: true
   service:
     name: syslog
     state: restarted
+  when: not ansible_unit_test
