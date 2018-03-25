@@ -12,7 +12,7 @@
   user:
     name: "{{ item.name }}"
     groups: admin,adm
-    shell: /bin/bash
+    shell: "{{ item.shell }}"
     password: "{{ item.password }}"
   with_items:
     - "{{ users }}"

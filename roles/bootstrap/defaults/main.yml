@@ -23,7 +23,7 @@ mailgun_password: 646Qn9ogUQCODD1IDHQS
 #
 
 users:
-    - {name: 'luis7238', public_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3hwPQD+AejXeitq1THjV5KTus22SbdZOZ0H23ymaV3q6E9cJwjl+CpUpOvegriBE14YV0qIU1Fcl/9cqYGtAIAtGC2JgjC/dqnQAA6+FqUEUkkOnflN2xoYYfGidezMllmHsRZZM++twJ+qr+TcYDCQM3xmsfotRXmAPmzOUkclfAU9vEra5zwJYrG4N3kFKm+JN3Q+uqUv7qwEV34wZmgAFZadPOnGnmPE9NFVefUG68+zok4pA8+O6TufMB0pYNmHIkLrGaWcoi1zRdLz3uvdXa99zx+hREMsejcMRJ8MJb8QXHMZA3R+FapCir+OySIkGi6C0VRECHISl24NZB luis7238@MLNAAPDTY3', password: 'AOczbvVa/vfXE' }
+  - {name: 'luis7238', password: 'AOczbvVa/vfXE', shell: '/bin/bash', public_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3hwPQD+AejXeitq1THjV5KTus22SbdZOZ0H23ymaV3q6E9cJwjl+CpUpOvegriBE14YV0qIU1Fcl/9cqYGtAIAtGC2JgjC/dqnQAA6+FqUEUkkOnflN2xoYYfGidezMllmHsRZZM++twJ+qr+TcYDCQM3xmsfotRXmAPmzOUkclfAU9vEra5zwJYrG4N3kFKm+JN3Q+uqUv7qwEV34wZmgAFZadPOnGnmPE9NFVefUG68+zok4pA8+O6TufMB0pYNmHIkLrGaWcoi1zRdLz3uvdXa99zx+hREMsejcMRJ8MJb8QXHMZA3R+FapCir+OySIkGi6C0VRECHISl24NZB luis7238@MLNAAPDTY3' }
 
 
 #mailgun_user: rs886212@mg.rackspace.com

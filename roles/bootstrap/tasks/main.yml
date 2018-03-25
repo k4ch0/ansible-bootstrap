@@ -1,8 +1,8 @@
 ---
 - include: apt.yml
 - include: locale.yml
+- include: users.yml
   #- include: files.yml
-   #- include: users.yml
    #- include: security.yml
    #- include: files.yml
    #- include: mailgun.yml
