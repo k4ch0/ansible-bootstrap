@@ -5,8 +5,24 @@
 
 - name: restart postfix
   become: true
-  service: name=postfix state=restarted
+  service:
+    name: postfix
+    state: restarted
 
 - name: restart ssh
   become: true
-  service: name=ssh state=restarted
+  service:
+    name: ssh
+    state: restarted
+
+- name: restart cron
+  become: true
+  service:
+    name: cron
+    state: restarted
+
+- name: restart syslog
+  become: true
+  service:
+    name: syslog
+    state: restarted

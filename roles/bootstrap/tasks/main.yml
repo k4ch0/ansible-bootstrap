@@ -1,7 +1,7 @@
 ---
 - include: apt.yml
+- include: locale.yml
   #- include: files.yml
-   # - include: locale.yml
    #- include: users.yml
    #- include: security.yml
    #- include: files.yml
