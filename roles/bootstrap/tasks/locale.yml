@@ -2,6 +2,7 @@
 - name: generate locale
   become: true
   command: /usr/sbin/locale-gen {{locale}}
+
 - name: set locale
   become: true
   command: /usr/sbin/update-locale LANG={{locale}} LC_ALL={{locale}} LANGUAGE={{language}}
