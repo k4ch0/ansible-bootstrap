@@ -1,8 +1,5 @@
 ---
-- name: Install postfix
-  action: apt pkg=postfix
-
-- name: Include Mailgun configuration in main.conf
+- name: Include Mailgun configuration in main.cf
   become: true
   lineinfile:
     dest: /etc/postfix/main.cf
@@ -19,12 +16,14 @@
     - restart postfix
 
 - name: Ensure Postfix has started and will start on reboot
+  become: true
   service:
     name: postfix
     state: started
     enabled: yes
 
 - name: Set root's email forward
+  become: true
   lineinfile:
     dest: /root/.forward
     create: yes

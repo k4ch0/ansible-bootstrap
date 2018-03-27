@@ -2,8 +2,8 @@
 - include: apt.yml
 - include: locale.yml
 - include: users.yml
+- include: mailgun.yml
   #- include: files.yml
    #- include: security.yml
    #- include: files.yml
-   #- include: mailgun.yml
    # - include: newrelic.yml
