@@ -1,6 +1,6 @@
 boxes = {
   "vagrant-ubuntu" => {
-    :box => "ubuntu/xenial64",
+    :box => "ubuntu/bionic64",
     :ip  => '10.0.200.100',
     :cpu => "100",
     :ram => "512"
