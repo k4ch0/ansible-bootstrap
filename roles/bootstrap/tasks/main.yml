@@ -1,8 +1,8 @@
 ---
-- include: apt.yml
-- include: locale.yml
-- include: users.yml
-- include: mailgun.yml
-- include: newrelic.yml
-  #- include: files.yml
-   #- include: security.yml
+- import_tasks: apt.yml
+- import_tasks: locale.yml
+- import_tasks: users.yml
+- import_tasks: mailgun.yml
+- import_tasks: newrelic.yml
+  #- import_tasks: files.yml
+   #- import_tasks: security.yml

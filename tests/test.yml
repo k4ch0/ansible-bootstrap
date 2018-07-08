@@ -10,7 +10,7 @@
     - ansible_unit_test: true
 
   roles:
-      - { role: '../roles/bootstrap' }
+    - { role: '../roles/bootstrap' }
 
   post_tasks:
     - name: tests - sleep for Test startup
