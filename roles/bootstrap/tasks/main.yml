@@ -3,7 +3,6 @@
 - include: locale.yml
 - include: users.yml
 - include: mailgun.yml
+- include: newrelic.yml
   #- include: files.yml
    #- include: security.yml
-   #- include: files.yml
-   # - include: newrelic.yml

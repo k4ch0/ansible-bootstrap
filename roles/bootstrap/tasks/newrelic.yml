@@ -1,7 +1,14 @@
 ---
 # https://docs.newrelic.com/docs/server/installation-ubuntu-and-debian
 - name: Configure server monitor daemon
+  become: true
   command: /usr/sbin/nrsysmond-config --set license_key="{{ newrelic_license_key }}"
+  #notify:
+  # - restart newrelic-sysmon
 
 - name: Start server monitor daemon
-  command: "/etc/init.d/newrelic-sysmond start"
+  become: true
+  #  command: "/etc/init.d/newrelic-sysmond start"
+  service:
+    name: newrelic-sysmond
+    state: started

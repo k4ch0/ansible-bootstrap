@@ -28,3 +28,9 @@
     name: syslog
     state: restarted
   when: not ansible_unit_test
+
+- name: restart newrelic-sysmon
+  become: true
+  service:
+    name: newrelic-sysmon
+    state: restarted
